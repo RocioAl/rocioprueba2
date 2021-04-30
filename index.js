@@ -63,3 +63,6 @@ function verifyToken(req, res, next) {
 app.listen(port, () => {
     console.log(`Api corriendo en el puerto ${port}`);
 });
+
+
+// intalar $ npm install cors
