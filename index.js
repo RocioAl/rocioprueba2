@@ -10,10 +10,10 @@ app.use(express.urlencoded({
     extended: true
 }));
 
-// app.use(cors())
-// app.get('/con-cors', cors(), (req, res, next) => {
-//     res.json({ msg: 'con cors 🔝 🎉' })
-// })
+app.use(cors())
+app.get('/con-cors', cors(), (req, res, next) => {
+    res.json({ msg: 'con cors 🔝 🎉' })
+})
 app.get("/api", (req, res) => {
     res.json({
         mensaje: "Nodejs and JWT"
