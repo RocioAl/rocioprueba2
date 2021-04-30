@@ -1,8 +1,19 @@
 const express = require("express");
 const jwt = require("jsonwebtoken");
-
 const app = express();
+// const cors = require('cors');
+const { req, res } = require('express');
 
+const port = process.env.PORT || 5000;
+app.use(express.json());
+app.use(express.urlencoded({
+    extended: true
+}));
+
+// app.use(cors())
+// app.get('/con-cors', cors(), (req, res, next) => {
+//     res.json({ msg: 'con cors 🔝 🎉' })
+// })
 app.get("/api", (req, res) => {
     res.json({
         mensaje: "Nodejs and JWT"
@@ -50,7 +61,6 @@ function verifyToken(req, res, next) {
         res.sendStatus(403);
     }
 }
-
-app.listen(3000, () => {
-    console.log("nodejs app running...");
+app.listen(port, () => {
+    console.log(`Api corriendo en el puerto ${port}`);
 });
