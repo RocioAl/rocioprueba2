@@ -1,7 +1,7 @@
 const express = require("express");
 const jwt = require("jsonwebtoken");
 const app = express();
-// const cors = require('cors');
+const cors = require('cors');
 const { req, res } = require('express');
 
 const port = process.env.PORT || 5000;
